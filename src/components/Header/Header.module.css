@@ -1,0 +1,28 @@
+.header{
+    background-color: black;
+    border-bottom: 2px solid #a0170e;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 12vh;
+    display: flex;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 999;
+}
+
+.header span{
+    font-size: 2rem;
+    color: #a0170e;
+    font-weight: 500;
+}
+
+.header a{
+    text-decoration: none;
+    color: #fff;
+    padding-inline: 0.5rem;
+}
+
+

@@ -1,0 +1,9 @@
+.container{
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden; /*esconde o transbordamento causado pelo slider*/
+    background-color: #191919;
+    color: #fff;
+    text-align: center;
+    padding-inline: 1.5rem;
+}
