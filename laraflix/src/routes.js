@@ -3,19 +3,24 @@ import Home from "./pages/Home";
 import Watch from "./pages/Watch";
 import PageNotFound from "./pages/PageNotFound";
 import Search from "./pages/Search";
-
-function AppRoutes(){
-    return(
-
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={ <Home/> }></Route>
-                <Route path="/watch/:id" element={ <Watch/> }></Route>
-                <Route path="/search" element={ <Search/> }></Route>
-                <Route path="*" element={ <PageNotFound/> }></Route>
-            </Routes>
-        </BrowserRouter>
-    );
+import Favorites from "./pages/Favorites";
+import FavoritesProvider from "./contexts/FavoritesProvider";
+import VideoCadastre from "./pages/VideoCadastre"
+function AppRoutes() {
+  return (
+    <BrowserRouter>
+      <FavoritesProvider>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/watch/:id" element={<Watch />}></Route>
+          <Route path="/search" element={<Search />}></Route>
+          <Route path="/cadastre" element={<VideoCadastre/>}></Route>
+          <Route path="/favorites" element={<Favorites />}></Route>
+          <Route path="*" element={<PageNotFound />}></Route>
+        </Routes>
+      </FavoritesProvider>
+    </BrowserRouter>
+  );
 }
 
 export default AppRoutes;

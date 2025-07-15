@@ -1,14 +1,23 @@
 import styles from "./Category.module.css";
 import videos from "../../json/db.json"
 
-export const categories = [
-  "philosophy",
-  "science",
-  "horror",
-];
+//retorna uma array com todas as categorias listadas
+export function setCategories(videos){
+    const array = [];
+    videos.forEach(v => {
+        if(!array.includes(v.category)){
+            array.push(v.category);
+        }
+    });
+    return array;
+}
 
-export function filterCategory(id){
-  return videos.filter(video => video.category === categories[id])
+//obtem a array de categorias para ser reutilizada em outros componentes
+export const categories = setCategories(videos);
+
+//retorna uma array com os videos de acordo com o nome da categoria
+export function setFilterVideos(videos, nameCategory){
+    return videos.filter( v => v.category.includes(nameCategory));
 }
 
 function Category({category, children}){

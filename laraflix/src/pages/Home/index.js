@@ -2,17 +2,14 @@
 import Banner from "../../components/Banner";
 import Card from "../../components/Card";
 import Carousel from "../../components/Carousel";
-import Category, {categories, filterCategory}  from "../../components/Category";
+import Category, {categories, setFilterVideos}  from "../../components/Category";
 import Container from "../../components/Container";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 
-function Home() {
-  // Hook = gancho 
-  //useState é usado para controlar valores de variaveis
-  //o estado inicial dos componentes é imutavel
-  //const [nome, setNome] = useState(100);
+import videos from "../../json/db.json";
 
+function Home() {
   return (
     <>
       <Header/>
@@ -22,9 +19,7 @@ function Home() {
           categories.map((cat, index)=>(
             <Category key={cat} category={cat}>
               <Carousel>
-                {filterCategory(index).map(
-                  video => (<Card id={video.id} key={video.id}/>)
-                )}
+                {setFilterVideos(videos, cat).map( video => <Card id={video.id} key={video.id}/> )}
               </Carousel>
             </Category>
           ))
