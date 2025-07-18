@@ -1,0 +1,36 @@
+### Listar todos os restaurantes
+GET http://localhost:3333/restaurantes
+Content-Type: application/json
+
+###
+
+### Buscar restaurante por ID
+GET http://localhost:3333/restaurantes/1
+Content-Type: application/json
+
+###
+
+### Criar novo restaurante
+POST http://localhost:3333/restaurantes
+Content-Type: application/json
+
+{
+  "nome": "Maffi grill",
+  "cidade": "Santa maria"
+}
+
+###
+
+### Atualizar restaurante
+PUT http://localhost:3333/restaurantes/1
+Content-Type: application/json
+
+{
+  "nome": "Sabor Nordestino Atualizado",
+  "cidade": "Olinda"
+}
+
+###
+
+### Deletar restaurante
+DELETE http://localhost:3333/restaurantes/2

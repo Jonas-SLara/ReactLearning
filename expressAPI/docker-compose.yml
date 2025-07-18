@@ -1,0 +1,13 @@
+services:
+  db:
+    image: postgres:16
+    restart: always
+    container_name: db_restaurantes
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: restaurantes
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./init-db:/docker-entrypoint-initdb.d
